@@ -1,0 +1,26 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block head %}
+	<script type="text/javascript" src='{% static "js/administrador/novo_produto.js" %}'></script>
+	
+{%endblock%}
+
+{% block body %}
+
+	
+	<h3>novo produto page!</h3>
+	<form method="POST" class="post-form" id='formulario' enctype="multipart/form-data" action="/admin/novo_produto">
+        {% csrf_token %}  
+
+        <!--
+        <p><label for="id_titulo">Titulo:</label> <input type="text" name="titulo" maxlength="50" required="" id="id_titulo"></p>
+        <p><label for="id_preço">Preço:</label> <input type="number" name="preço" step="0.01" required="" id="id_preço"></p>
+        <p><label for="id_imagem">Imagem:</label> <input type="file" name="imagem" id="id_imagem"></p>
+    	-->
+        {{ form.as_p }}  
+        <button type="submit" class="save btn btn-default" id='botão_enviar'>Save</button>  
+    </form>  
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+
+{% block body %}
+
+	
+	<h3>meus produtos page!</h3>
+	{% for p in produtos %}
+		<h3>{{p.titulo}}</h3>
+		<img src='{% get_media_prefix %}{{p.imagem.name}}'>
+	{% endfor %}
+
+
+{% endblock %}

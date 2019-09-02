@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand justify-content-center navbar-dark bg-dark">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    {% if request.user.is_authenticated%}
+      <li class="nav-item">
+      <a class="nav-link" href="/lojas/logout">Logout</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/admin">Admin</a>
+    </li>
+    {% else %}
+      <li class="nav-item">
+      <a class="nav-link" href="/lojas/registro">Anuncie Conosco!</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/lojas/login">Login</a>
+       </li>
+    {% endif %}
+    
+  </ul>
+</nav>
