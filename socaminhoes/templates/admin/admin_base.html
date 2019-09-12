@@ -21,10 +21,15 @@
 		    {% endfor %}
 		</ul>
 	{% endif %}
+
 	{% include 'navbar.html' %}
+
 	{% if request.user.is_authenticated %}
 		{% include 'admin/admin_navbar.html' %}
+		{% block beforecontent %}
+		{% endblock %}
 		<div class='container col-9' id = 'content'>
+
 	
 		{%block body%}{%endblock%}
 	{% else %}
@@ -34,7 +39,7 @@
 
 	
 
-	</div>
+		</div>
 
 </body>
 </html>

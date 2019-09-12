@@ -15,4 +15,4 @@ class NewRegistrationForm(UserCreationForm):
 class form_produto(forms.ModelForm):
 	class Meta:  
 		model = produto  
-		fields = "__all__"  
+		fields = ['titulo', 'preço', 'imagem', 'marca', 'ano_de_fabricação' ]

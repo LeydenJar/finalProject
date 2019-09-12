@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/explorar/home.css' %}">
+	<script type="text/javascript" src='{% static "js/explorar/home.js" %}'></script>
+{%endblock%}
+
+{% block before_container %}
+	<img src="{% static 'media/imagens_do_site/fundo_do_site.jpg' %}" id = 'fundo_do_site'>
+	<div class="container home-search" id="barra_de_pesquisa">
+  		<div class="container search-container row home">
+        <form accept-charset="UTF-8" action="/venda/caminhoes-usados" class="form-inline col-xs-12 container" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+          <div class="form-group col-sm-10 col-xs-12 container row">
+            <div class="input-group col-sm-12 col-xs-12">
+              <input class="form-control col-sm-12 col-xs-12 ui-autocomplete-input" id="termo" name="termo" placeholder="Palavras Chave" type="text" autocomplete="off">
+            </div>
+          </div>
+          <div class="col-sm-2 col-xs-12 container">
+            <button class="btn btn-submit col-sm-12 omega botao_de_busca">Buscar</button>
+          </div>
+		</form>    
+	  </div>
+  	</div>
+{% endblock %}
+
+{%block body%}
+	
+	<div id='div_dos_produtos'>
+		{% for p in produtos %}
+			<div class='div_do_produto'>
+				<img class='imagem_do_produto' src='{%get_media_prefix%}{{p.imagem.name}}'>
+				<h3 class='titulo_do_produto'> {{ p.titulo }}</h3>
+				<div class='div_do_preço'><p class='preço_do_produto'> {{ p.preço }}</p></div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class='col-3 div_das_categorias '>
+		<div class = 'tipo_de_filtro'>
+			<div class='div_do_titulo'>
+				<h3 class = 'titulo_do_filtro'> Marcas </h3>
+			</div>
+			{% for m in marcas %}
+			<div class='div_do_filtro'><a href='/marca/{{m.nome}}'>{{m.nome}}</a></div>
+			{% endfor %}
+		</div>
+		<div class = 'tipo_de_filtro'>
+			<div class = 'div_do_titulo'>
+				<h3 class='titulo_do_filtro'> Tração </h3>
+			</div>
+			{% for t in trações %}
+			<div class='div_do_filtro'><a href='/tração/{{t.nome}}'>{{t.nome}}</a></div>
+			{% endfor %}
+		</div>
+		
+	</div>
+
+{%endblock%}
