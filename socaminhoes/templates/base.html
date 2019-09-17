@@ -11,8 +11,11 @@
 	{%block head%}{%endblock%}
 </head>
 <body>
+	
 	{% block before_container %}{% endblock %}
 	{% include 'navbar.html' %}
+
+	
 	<div class='container' id = 'content'>{%block body%}{%endblock%}</div>
 </body>
 </html>

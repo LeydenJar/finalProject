@@ -4,6 +4,7 @@ from lojas import models
 from django.contrib import messages
 from lojas.serializers import serializar_produto
 from django.shortcuts import get_object_or_404
+from django.http import Http404, JsonResponse
 
 # Create your views here.
 def home_admin(request):
@@ -15,17 +16,27 @@ def novo_produto(request):
 	elif request.method == 'POST':
 
 		try:
-			
+			#print(models.produto.objects.get(request.user))
+			#print(models.produto.objects.get(request.user.username))
 			img = request.POST.get('imagem')
-			print(img)
-			print(request.FILES)
+			
 			produto = {
 				'titulo' : request.POST.get('titulo'),
+				'descrição' : request.POST.get('descrição'),
 				'preço' : request.POST.get('preço'),
-				'imagem' : request.FILES['imagem'],
-				'loja' : request.user.username
+				'loja' : request.user,
+				'marca' : request.POST.get("marca"),
+				'modelo' : request.POST.get("modelo"),
+				'ano_de_fabricação' : request.POST.get("ano_de_fabricação"),
+				'ano_do_modelo' : request.POST.get("ano_do_modelo"),
+				'tração' : request.POST.get("tração"),
+				'quilometragem' : request.POST.get("quilometragem"),
+				'imagem' : request.FILES['imagem']
+				
 			}
-			print(type(produto["imagem"]))
+				#print(produto['loja'])
+				
+
 				
 			instance = models.produto.create(produto)
 			instance.save()
@@ -51,3 +62,13 @@ def meus_produtos(request):
 	print(serial2)
 	"""
 	return render(request, 'admin/meus_produtos.html', {'produtos' : produtos})
+
+def excluir_produto(request):
+	if request.method == 'POST':
+		pk = request.POST.get('pk')
+		print(pk)
+		produto = models.produto.objects.get(pk = pk)
+		produto.delete()
+		return JsonResponse({'success':True})
+	else:
+		raise Http404('Error: Invalid request method')

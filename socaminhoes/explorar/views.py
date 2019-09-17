@@ -71,3 +71,12 @@ def filtro(request, categoria, chave):
 	
 
 	return render(request, 'explorar/home.html', context)
+
+
+def pagina_do_caminhao(request, chave):
+	p = produto.objects.get(pk = chave)
+	context={
+	'produto' : p
+	}
+	
+	return render(request, 'explorar/produto.html', context)

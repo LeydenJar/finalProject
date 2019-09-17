@@ -3,13 +3,16 @@ body{
 }
 
 #fundo_do_site{
+	position:absolute;
+	top:0;
 	width:100vw;
 	height: 65vh;
-	box-shadow:0px 1px 10px 1px #383838
+	box-shadow:0px 1px 10px 1px #383838;
+	z-index:0;
 }
 
 .navegação{
-	background:transparent !important;
+	background:#ff000000 !important;
 }
 
 #barra_de_pesquisa{
@@ -25,10 +28,21 @@ body{
 	background-color: #9bad7b !important;
 }
 
+
+
+#content{
+	position:absolute;
+	width:100%;
+	height:100%;
+	height:-webkit-fill-available;
+	margin-top:10%;
+}
 #div_dos_produtos{
 	position:absolute;
+
 	width:75%;
 	height:100%;
+	top:55%;
 	left:25%;
 	margin-top:4%;
 }
@@ -94,7 +108,7 @@ body{
 	width:20%;
 	height:300%;
 	left: 3%;
-	top:70%;
+	top:62%;
 	box-shadow: 3px 3px 10px  #b1cee8
 }
 
@@ -102,4 +116,8 @@ body{
 	position:relative;
 	width:95%;
 	left:5%;
+}
+
+.dedinho{
+	cursor: pointer;
 }
