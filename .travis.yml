@@ -2,5 +2,5 @@ language: python
 python: 3.6
 install: pip install -r requirements.txt
 script:
-  cd socaminhoes
-  python manage.py test
+  - cd socaminhoes
+  - python manage.py test
