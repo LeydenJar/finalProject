@@ -16,4 +16,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 			}
 		}
 	});
+	document.querySelectorAll('.botão_editar').forEach(function(botao){
+		botao.onclick = ()=>{
+			const pk = botao.getAttribute('data-pk');
+			window.location.href = 'editar_produto/' + pk;
+		}
+
+	});
 });

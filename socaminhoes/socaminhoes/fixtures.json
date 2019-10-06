@@ -1,0 +1,83 @@
+[
+	{
+		"model": "lojas.marca",
+		"pk":1,
+		"fields":{
+			"nome":"Volkswagen"
+		}
+	},
+
+	{
+		"model": "lojas.marca",
+		"pk":2,
+		"fields":{
+			"nome":"Ford"
+		}
+	},
+
+	{
+		"model": "lojas.marca",
+		"pk":3,
+		"fields":{
+			"nome":"Volvo"
+		}
+	},
+
+	{
+		"model": "lojas.marca",
+		"pk":4,
+		"fields":{
+			"nome":"Mercedes"
+		}
+	},
+
+	{
+		"model":"lojas.modelo",
+		"pk":1,
+		"fields":{
+			"nome":"6160",
+			"marca":1
+		}
+	},
+
+	{
+		"model":"lojas.modelo",
+		"pk":2,
+		"fields":{
+			"nome":"4150",
+			"marca":1
+		}
+	},
+
+	{
+		"model": "lojas.tração",
+		"pk":1,
+		"fields":{
+			"nome":"4x2"
+		}
+	},
+
+	{
+		"model": "lojas.tração",
+		"pk":2,
+		"fields":{
+			"nome":"4x4"
+		}
+	},
+
+	{
+		"model": "lojas.tração",
+		"pk":3,
+		"fields":{
+			"nome":"6x2"
+		}
+	},
+
+	{
+		"model": "lojas.tração",
+		"pk":4,
+		"fields":{
+			"nome":"6x4"
+		}
+	}
+]

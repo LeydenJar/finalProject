@@ -74,7 +74,8 @@ def filtro(request, categoria, chave):
 
 
 def pagina_do_caminhao(request, chave):
-	p = produto.objects.get(pk = chave)
+	p = produto.objects.select_related('loja').get(pk = chave)
+	
 	context={
 	'produto' : p
 	}

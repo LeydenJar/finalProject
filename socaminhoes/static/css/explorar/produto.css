@@ -1,0 +1,196 @@
+body{
+    overflow-x:hidden;
+}
+
+p{
+    margin:2%;
+}
+
+:root{
+    --shadow: 1px 1px 4px 2px #aab7b9;
+
+}
+
+    
+
+
+/* Imagens */
+
+#div_das_imagens{
+    position:absolute;
+    padding:1%;
+    top:15%;
+    height:70%;
+    display:inline-flex;
+}
+
+#div_das_imagens_pequenas{
+    position:relative;
+    height:100%;
+    box-shadow: var(--shadow);
+}
+
+#div_da_imagem_grande{
+    position:relative;
+    height:100%;
+    background:aliceblue;
+    margin-left:5%;
+    border-radius:10%;
+}
+
+/* div das informações do produto */
+
+#div_informações_do_produto{
+    position:absolute;
+    padding:1%;
+    top:15%;
+    left:80%;
+    height:70%;
+    z-index:1;
+    border-radius:3%;
+    box-shadow: var(--shadow);
+}
+
+#div_do_titulo_do_produto{
+    position:relative;
+    background:aliceblue;
+    height:20%;
+    width:100%;
+    text-align: center;
+}
+
+#titulo_do_produto{
+    position:relative;
+    font-family: Montserrat;
+    font-weight: bold;
+    color:#343434;
+    top:50%;
+    transform:translateY(-50%);
+
+}
+
+
+#imagem_do_produto{
+    position:relative;
+    height:100%;
+    border-radius:3%;
+    box-shadow: var(--shadow);
+}
+
+
+#preço{
+    position:relative;
+    text-align:right;
+    padding-right:10%;
+    margin-bottom:20%;
+    font-family:Montserrat;
+    font-size:larger;
+
+}
+
+
+#loja{
+    
+}
+
+#localização{
+
+}
+#marca{
+
+}
+#modelo{
+
+}
+
+#div_dos_botoes_de_acao{
+    position:relative;
+    margin-top:10%;
+    height:20%;
+    width:100%;
+    box-shadow: var(--shadow);
+}
+
+#div_whats{
+    padding:1%;
+}
+
+#div_imagem_whats{
+     float:left;
+     position:relative;
+     background:antiquewhite
+     height:20%;
+     width:15%;
+
+     margin-right:2%;
+}
+#logo_do_whats{
+    position:relative;
+    height:100%;
+    width:100%;
+}
+#div_texto_whats{
+    position:relative;
+    bottom:12%;
+}
+
+#div_telefone{
+    padding:1%;
+}
+
+#div_imagem_telefone{
+    float:left;
+    position:relative;
+    height:20%;
+    width:15%;
+
+    margin-right:2%;
+}
+#logo_do_telefone{
+    position:relative;
+    width:100%;
+    }
+
+#div_texto_telefone{
+    position:relative;
+    bottom:12%;
+}
+#div_do_titulo_botoes_de_acao{
+    position:relative;
+    height:60%;
+    color:#343434;
+    }
+#titulo_botoes_de_acao{
+    left:10%;
+    position:relative;
+    top:40%;
+    transform:translateY(-50%);
+    font-family:Montserrat;
+}
+
+#botoes_de_acao{
+    display:inline-flex;
+}
+
+
+/*  Descrição  */
+#div_descrição{
+    position:absolute;
+    margin-top:2%;
+    top:85%;
+    width:-webkit-fill-available;
+    height:25%;
+    border-radius:2%;
+    box-shadow: var(--shadow);
+    padding:1%;
+
+}
+#titulo_descrição{
+    position:relative;
+    font-family:Montserrat;
+    font-size:180%;
+    color:#343434
+}
+#descrição{
+    margin-left: 7%;
+}

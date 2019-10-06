@@ -16,7 +16,7 @@
 			<div class='div_do_preço'><p class='preço_do_produto'> {{ p.preço }}</p></div>
 			<button data-pk='{{p.id}}' type='submit' class='botão_excluir'>Excluir</button>
 			<button>Marcar como Vendido</button>
-			<button>Editar</button>
+			<button data-pk='{{p.id}}' type='submit' class='botão_editar'>Editar</button>
 		</div>
 	{% endfor %}
 	</div>

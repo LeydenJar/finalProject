@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/explorar/produto.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div id='div_das_imagens' class='col-9'>
+		<div id='div_das_imagens_pequenas' class='col-2'></div>
+		<div id = 'div_da_imagem_grande' class='col-9'><img id='imagem_do_produto' class='col-12'src="{%get_media_prefix%}{{produto.imagem.name}}"></div>
+	</div>
+	<div id='div_informações_do_produto' class='col-4'>
+		<div id='div_do_titulo_do_produto'><h3 id='titulo_do_produto'>{{produto.titulo}}</h3></div>
+		<div id='informações_do_produto'>
+			<h4 id='preço'>R$: {{produto.preço}}</h4>
+			<p id='loja'>Loja: {{produto.loja.username}}</p>
+			<p id='localização'>Localização: Guaramirim</p>
+			<p id='marca'>Marca: {{produto.marca}}</p>
+			<p id='modelo'>Modelo: {{produto.modelo}}</p>
+		</div>
+		<div id='div_dos_botoes_de_acao'>
+			<div id = 'div_do_titulo_botoes_de_acao'>
+				
+				<h3 id = 'titulo_botoes_de_acao'>Contato</h3>
+
+			</div>
+			<div id = 'botoes_de_acao'>
+				<div id='div_whats' class='col-6'>
+				<div id='div_imagem_whats'>
+					<img id= "logo_do_whats"  src='{% static "media/imagens_do_site/logo_do_whats.png" %}'>
+				</div>
+				<div id='div_texto_whats'>
+					<p>(47) 9 9876 5432</p>
+				</div>
+			</div>
+			<div id='div_telefone' class='col-6'>
+				<div id='div_imagem_telefone'>
+					<img id= "logo_do_telefone"  src='{% static "media/imagens_do_site/logo_do_telefone.png" %}'>
+				</div>
+				<div id='div_texto_telefone'>
+					<p>(47) 9 9876 5432</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div id='div_descrição'>
+		<h3 id='titulo_descrição'>Descrição</h3>
+		<p id='descrição'>{{produto.descrição}}</p>
+		
+	</div>
+	<div id='div_produtos_semelhantes'></div>
+{% endblock %}
