@@ -10,7 +10,7 @@ addons:
 services:
   - xvfb
 before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.27/chromedriver_linux64.zip
+  - wget http://chromedriver.storage.googleapis.com/2.36/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - sudo apt-get install libglib2.0-0
   #=2.50.3-2+deb9u1
