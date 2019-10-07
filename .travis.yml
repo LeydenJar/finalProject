@@ -1,12 +1,14 @@
 language: python
 python: 3.6
 install: pip install -r requirements.txt
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 before_script:
-  - wget http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-
-  - unzip chromedriver_linux64.zip -d /home/travis/virtualenv/python3.6.7/bin/
-
-  - export CHROME_BIN=chromium-browser
+  - sleep 3
 script:
   - cd socaminhoes
   - python manage.py test
