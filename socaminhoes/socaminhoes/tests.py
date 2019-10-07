@@ -7,6 +7,7 @@ from selenium import webdriver
 import pathlib
 import os
 from time import sleep
+from django.conf import settings
 
 
 # Create your tests here.
