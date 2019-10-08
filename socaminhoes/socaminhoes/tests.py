@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from django.contrib.auth.models import User
+from users.models import User
 from django.core.management import call_command
 from lojas.models import produto, marca, tração, modelo, ano, implemento
 from selenium import webdriver
