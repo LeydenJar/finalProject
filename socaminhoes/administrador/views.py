@@ -1,11 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import form_produto
 from lojas import models
 from django.contrib import messages
 from lojas.serializers import serializar_produto
 from django.shortcuts import get_object_or_404, redirect
 from django.http import Http404, JsonResponse
-from django.contrib.auth.models import User
+from users.models import User
+from users.forms import NewUserChangeForm, form_de_mudar_dados, form_de_mudar_senha
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def home_admin(request):
 	return render(request, 'admin/home_admin.html')
@@ -120,3 +125,39 @@ def editar_produto(request, pk):
 		get_object_or_404(models.produto, pk=pk)
 		
 		return render(request, 'admin/editar_produto.html', {'form' : form_produto, 'pk':pk})
+
+"""def minha_conta(request):
+	if request.method == "GET":
+		form = NewUserChangeForm()
+		return render(request, 'admin/minha_conta.html', {'form' : form})
+	elif request.method == "POST":
+		raise Http404('still not built it')
+	else:
+		raise Http404('Invalid request method')"""
+
+def mudar_dados(request):
+	if request.method == "GET":
+		form = form_de_mudar_dados()
+		return render(request, 'admin/mudar_dados.html', {'form':form})
+	elif request.method == "POST":
+		form=form_de_mudar_dados(data=request.POST, instance=request.user)
+		
+		if form.is_valid():
+
+			user = form.save(commit=False)
+			user.save()
+			messages.success(request, "Conta alterada com sucesso")
+		else:
+			messages.error(request, "Desculpe, houve um problema na autenticação dos dados!")
+		return render(request, 'admin/home_admin.html')
+	else:
+		raise Http404("Invalid Request Method")
+	
+@login_required
+def mudar_senha(request):
+	form = form_de_mudar_senha(user=request.user, data=request.POST or None)
+	if form.is_valid():
+		form.save()
+		form_de_mudar_senha(request, form.user)
+		return redirect('/')
+	return render(request, 'admin/mudar_senha.html', {'form': form})

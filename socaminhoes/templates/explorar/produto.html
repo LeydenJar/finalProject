@@ -16,7 +16,7 @@
 		<div id='informações_do_produto'>
 			<h4 id='preço'>R$: {{produto.preço}}</h4>
 			<p id='loja'>Loja: {{produto.loja.username}}</p>
-			<p id='localização'>Localização: Guaramirim</p>
+			<p id='localização'>Localização: {{produto.loja.cidade}}</p>
 			<p id='marca'>Marca: {{produto.marca}}</p>
 			<p id='modelo'>Modelo: {{produto.modelo}}</p>
 		</div>
@@ -32,7 +32,7 @@
 					<img id= "logo_do_whats"  src='{% static "media/imagens_do_site/logo_do_whats.png" %}'>
 				</div>
 				<div id='div_texto_whats'>
-					<p>(47) 9 9876 5432</p>
+					<p>{{produto.loja.celular}}</p>
 				</div>
 			</div>
 			<div id='div_telefone' class='col-6'>
@@ -40,7 +40,7 @@
 					<img id= "logo_do_telefone"  src='{% static "media/imagens_do_site/logo_do_telefone.png" %}'>
 				</div>
 				<div id='div_texto_telefone'>
-					<p>(47) 9 9876 5432</p>
+					<p>{{produto.loja.telefone}}</p>
 				</div>
 			</div>
 			</div>

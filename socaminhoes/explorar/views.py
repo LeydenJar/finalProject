@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from lojas.models import produto, marca, modelo, tração
 from lojas import models as modelslojas
+from django.core.paginator import Paginator
 
 # Create your views here.
 def explore(request):
@@ -30,10 +31,14 @@ def explore(request):
 	"""
 	
 
-	produtos = produto.objects.all()[:10]
-	marcas = marca.objects.all()[:10]
-	modelos = modelo.objects.all()[:10]
-	trações = tração.objects.all()[:10]
+	produtos = produto.objects.all()
+	page = request.GET.get('page')
+	print(page)
+	paginator = Paginator(produtos, 2)
+	produtos = paginator.get_page(page)
+	marcas = marca.objects.all()
+	modelos = modelo.objects.all()
+	trações = tração.objects.all()
 
 	context = {
 		'produtos' : produtos,
@@ -55,12 +60,15 @@ def filtro(request, categoria, chave):
         categoria: pick
     }
     
-	produtos = produto.objects.filter(**filters)[:10]
+	produtos = produto.objects.filter(**filters)
+	page = request.GET.get('page')
+	print(page)
+	paginator = Paginator(produtos, 2)
+	produtos = paginator.get_page(page)
 
-
-	marcas = marca.objects.all()[:10]
-	modelos = modelo.objects.all()[:10]
-	trações = tração.objects.all()[:10]
+	marcas = marca.objects.all()
+	modelos = modelo.objects.all()
+	trações = tração.objects.all()
 
 	context = {
 		'produtos' : produtos,
