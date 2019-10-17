@@ -1,4 +1,6 @@
-.navegação{
+html, body {height:100%;}
+
+.navegaÃ§Ã£o{
 	position:absolute;
 	z-index:1;
 	width:100%;
@@ -9,15 +11,47 @@
 #content{
 	position:absolute;
 	width:100%;
-	height:100%;
 	height:-webkit-fill-available;
+	height:auto !important;
 	margin-top:10px;
 }
 
 body{
 	position:absolute;
 	width:100vw;
-	height:100vh;
+	height:auto !important;
 	margin:0;
 	padding:0;
+	font-family:Roboto;
 }
+
+#Gratis{
+	position:absolute;
+	color: #b0ffb0;
+	font-family:Roboto;
+	top:6vh;
+	left:11vw;
+	font-weight:600;
+	display:none;
+}
+
+#hamburguer{
+		display:block;
+		position:absolute;
+		left:85%;
+		top:5%;
+
+	}
+	#hamburguer >hr{
+		background:#444444;
+		padding:0 20px 3px;
+		margin:5px;
+		display:-webkit-box;
+	}
+	#navbar_responsiva{
+		top:100%;
+		background:#ffa255;
+		width:100%;
+		z-index:1;
+		transform:translateY(-30%);
+	}

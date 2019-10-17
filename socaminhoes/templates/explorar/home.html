@@ -4,22 +4,26 @@
 {% block head %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/explorar/home.css' %}">
 	<script type="text/javascript" src='{% static "js/explorar/home.js" %}'></script>
+
 {%endblock%}
 
 {% block before_container %}
 	<div id='div_do_fundo_do_site'>
-	<img src="{% static 'media/imagens_do_site/fundo_do_site.jpg' %}" id = 'fundo_do_site'>
+		<img src="{% static 'media/imagens_do_site/fundo_do_site_2.jpg' %}" id = 'fundo_do_site'>
+
+		<div id= 'smoother'></div>
+		<img src="{% static 'media/imagens_do_site/Logo.svg' %}" id='logo'>
 	</div>
 	
 	<div class="container home-search" id="barra_de_pesquisa">
   		<div class="container search-container row home">
-        <form accept-charset="UTF-8" action="/venda/caminhoes-usados" class="form-inline col-xs-12 container" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+        <form accept-charset="UTF-8" action="/venda/caminhoes-usados" class="form-inline col-xs-12 container" method="get">
           <div class="form-group col-sm-10 col-xs-12 container row">
             <div class="input-group col-sm-12 col-xs-12">
-              <input class="form-control col-sm-12 col-xs-12 ui-autocomplete-input" id="termo" name="termo" placeholder="Palavras Chave" type="text" autocomplete="off">
+              <input class="form-control col-sm-12 col-xs-12" id="pesquisa" placeholder="Palavras Chave" type="text" >
             </div>
           </div>
-          <div class="col-sm-2 col-xs-12 container">
+          <div class="col-md-2 col-sm-10 col-xs-12 container">
             <button class="btn btn-submit col-sm-12 omega botao_de_busca">Buscar</button>
           </div>
 		</form>    
@@ -30,20 +34,53 @@
 {%block body%}
 	
 	<div id='div_dos_produtos'>
-		{% for p in produtos.object_list %}
+		{% for p in produtos %}
 			<div class='div_do_produto dedinho' data-produto='{{p.pk}}'>
 				<img class='imagem_do_produto' src='{%get_media_prefix%}{{p.imagem.name}}'>
 				<h3 class='titulo_do_produto'> {{ p.titulo }}</h3>
-				<div class='div_do_preço'><p class='preço_do_produto'> {{ p.preço }}</p></div>
+				<div class='div_do_preço'><p class='preço_do_produto'> R$:{{ p.preço }}</p></div>
 			</div>
 		{% endfor %}
-		{% for n in produtos.paginator.page_range %}
+
+		
+
+		<!--{% for n in produtos.paginator.page_range %}
 			{% if n > produtos.number|add:'-3' and n < produtos.number|add:'3'  %}
 			<a href="?page={{n}}"> {{n}} </a>
 			{% endif %}
-		{% endfor %}
+		{% endfor %}-->
+	</div>
+	<button id='ver_mais_produtos' class='btn'> Ver Mais Produtos </button>
+	<div id="div_anuncie_conosco">
+		<hr/ id='linha'>
+		<div id="titulo_anuncie_conosco"><h3 id='anuncie'>Anuncie</h3><h3 id='conosco'>Conosco</h3></div>
+		
+
+		<h5>Aqui é...</h5>
+
+		<div id="topicos">
+			<div id="facil">
+				<h4>Fácil</h4>
+				<p>Nosso site é simples de mexer. Venda pesado, se sinta leve</p>
+			</div>
+			<div id="seguro">
+				<h4>Seguro</h4>	
+				<p>Conferimos todos os anuncios</p>
+			</div>
+			<div id="gratis">
+				<h4>Gratis!</h4>
+				<p>Você pode assinar nossos planos se quiser, mas não te obrigamos a fazer isso ;)</p>
+			</div>
+		</div>
+		<span class='circle d-block d-md-none'></span>
+		<img id='logo_direita'src='{% static "media/Imagens_do_site/Logo2.svg" %}'>
+		<img id='logo_esquerda'src='{% static "media/Imagens_do_site/Logo2.svg" %}'>
 	</div>
 
+
+		
+
+<!--
 	<div class='col-3 div_das_categorias '>
 		<div class = 'tipo_de_filtro'>
 			<div class='div_do_titulo'>
@@ -62,5 +99,6 @@
 			{% endfor %}
 		</div>
 	</div>
+-->
 
 {%endblock%}

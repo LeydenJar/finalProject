@@ -31,14 +31,15 @@ def explore(request):
 	"""
 	
 
-	produtos = produto.objects.all()
+	produtos = produto.objects.all()[:9]
 	page = request.GET.get('page')
 	print(page)
-	paginator = Paginator(produtos, 2)
+	paginator = Paginator(produtos, 9)
 	produtos = paginator.get_page(page)
 	marcas = marca.objects.all()
 	modelos = modelo.objects.all()
 	trações = tração.objects.all()
+	produtos = produto.objects.all()[:9]
 
 	context = {
 		'produtos' : produtos,
@@ -53,6 +54,10 @@ def explore(request):
 	
 def filtro(request, categoria, chave):
 
+	#if categoria == 'titulo':
+
+	#else:
+
 	model = getattr(modelslojas, categoria)
 	pick = model.objects.get(nome = chave)
 	
@@ -63,7 +68,7 @@ def filtro(request, categoria, chave):
 	produtos = produto.objects.filter(**filters)
 	page = request.GET.get('page')
 	print(page)
-	paginator = Paginator(produtos, 2)
+	paginator = Paginator(produtos, 9)
 	produtos = paginator.get_page(page)
 
 	marcas = marca.objects.all()

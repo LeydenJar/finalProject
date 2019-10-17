@@ -7,4 +7,15 @@ document.addEventListener("DOMContentLoaded", function(){
 
 		}
 	});
+
+	var navbar = document.querySelector('#navbar_responsiva');
+	var hamburguer = document.querySelector('#hamburguer');
+
+	hamburguer.onclick = ()=>{
+		if (navbar.classList.contains('collapse')){
+			navbar.classList.remove('collapse');
+		}else{
+			navbar.classList.add('collapse');
+		}
+	}
 });

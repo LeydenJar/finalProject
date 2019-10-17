@@ -2,104 +2,164 @@ body{
 	overflow-x:hidden;
 }
 
-#fundo_do_site{
-	position:absolute;
-	top:0;
-	width:100vw;
-	height: 65vh;
-	box-shadow:0px 1px 10px 1px #383838;
-	z-index:0;
+
+/* Cabeçalho*/
+
+#hamburguer{
+	display:none;
 }
 
+#fundo_do_site{
+	position: relative;
+	width: 100vw;
+	height: 66.66vw;
+	left: 0px;
+	top: -17vw;
+
+
+}
+#div_do_fundo_do_site{
+	overflow:hidden;
+	height:66.66vh;
+}
+
+#smoother{
+	width:100vw;
+	height:66.66 vh;
+	opacity:0.5;
+	background: rgba(24, 19, 38, 0.54);
+	position:absolute;
+	top:0;
+	left:0;
+	
+}
+
+#logo{
+	position: absolute;
+	width: 25em;
+	left: 50%;
+	transform:translateX(-50%);
+	top: 0px;
+
+}
 .navegação{
+	position:absolute;
+	margin:10px;
+	margin-left:0;
+	top:0;
 	background:#ff000000 !important;
+
+}
+
+.nav-item{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 100%;
+	letter-spacing: -0.045em;
+
+	
+	margin-right:5%;
+	z-index:
+}
+
+.nav-link{
+	color: #ffffff !important; 
 }
 
 #barra_de_pesquisa{
 	position:absolute;
-	top:50%;
+	top:82%;
 	width:90%;
 	left:50%;
 	transform:translateX(-50%);
+	border-radius: 6px;
 
 }
 
 .botao_de_busca{
-	background-color: #9bad7b !important;
+	background: #79DE79;
+	border-radius: 10px;
 }
 
 
+
+
+/*Sessão produtos*/
 
 #content{
-	position:absolute;
-	width:100%;
+	width:100% !important;
 	height:100%;
 	height:-webkit-fill-available;
-	margin-top:10%;
+	margin-top:0%;
+	margin-left:0 !important;
+	padding:0;
 }
-#div_dos_produtos{
-	position:absolute;
 
-	width:75%;
-	height:100%;
+#div_dos_produtos{
+	width:100vw;
+	height:auto;
 	top:55%;
-	left:25%;
 	margin-top:4%;
+	display:flex;
+	flex-wrap: wrap;
+	padding-left:9vw;
+	padding-right:6vw;
 }
 
 .div_do_produto{
 	position:relative;
 	display:flex;
-	height:20%;
-	width:90%;
-	padding:1%;
-	border-style:solid;
-	border-radius:10px;
-	border-width:thin;
-	border-color:gainsboro;
-	box-shadow: 3px 3px 8px 1px #969696;
+	flex-wrap: wrap;
+	height:23vw;
+
+	width:25vw;
+	background: rgba(196, 196, 196, 0.5);
+	border-radius: 6px;
 	margin-bottom:1%;
+	margin: 0vw 1vw 3vw 1vw;
 
 
 }
 
 .div_do_produto:hover{
-	border-color: #99b1c6 !important;
-	box-shadow: 3px 3px 6px 2px #b1cee8;
+	box-shadow: 0px 0px 10px 2px #f8ae72;
 
 }
 .titulo_do_produto{
 	position:relative;
-	align-self:flex-start;
-	margin-left:1%;
-	margin-bottom:auto;
-	/*top:-100%;
-	left:20%;*/
+	left:50%;
+	top:3%;
+	transform:translateX(-50%);
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 26px;
+	line-height: 110%;
+	text-align: center;
+	letter-spacing: 0.02em;
+	margin-bottom:13px;
+
 }
 .imagem_do_produto{
 	position:relative;
-	height:100%;
-	border-radius:5px;
-	/*display:inline;*/
-	margin-right:2%;
-	box-shadow:1px 1px 8px #2d2e33;
+	height:75%;
+	width:100%;
 
 }
 
 .div_do_preço{
-	margin-left: auto;
-	margin-top:auto;
-	padding:0px;
-	
+	position:relative;
+	width:100%;
+	text-align:center;
+
 }
 .preço_do_produto{
-	
-	margin:0px;
-	margin-left:-25%;
 	font-style:bold;
-	font-family:fantasy;
-	font-size:16pt;
-	color:#71c475;
+	font-family:Roboto;
+	font-size:15pt;
+	color:#79de79;
 }
 
 .div_das_categorias{
@@ -121,3 +181,447 @@ body{
 .dedinho{
 	cursor: pointer;
 }
+
+#ver_mais_produtos{
+	position:relative;
+	background:#ffa255;
+	left:50% !important;
+	transform:translateX(-50%) !important;
+	width:30%;
+
+	padding:8px;
+	font-family:Roboto;
+	font-weight:bold;
+	color:#0a110a;
+	letter-spacing:.1em;
+	text-align:center;
+	line-height:120%;
+}
+
+
+
+
+
+
+/*Sessão Anuncie Conosco*/
+
+
+
+
+
+#div_anuncie_conosco{
+	position:relative;
+	width:100vw;
+	height:100vh;
+	margin:0;
+
+}
+#linha{
+	position:relative;
+	border: 2px solid #67684f;
+	width:50%;
+	margin-top:8%;
+	margin-bottom:6%;
+	left:50%;
+	transform:translateX(-50%);
+
+}
+
+#titulo_anuncie_conosco{
+	text-align:center;
+	color:#2D1E0A;
+
+
+}
+#titulo_anuncie_conosco>h3{
+	font-weight:600;
+	letter-spacing: 0.41em;
+	font-size:27pt;
+}
+
+#anuncie{
+	position:relative;
+	left:-5%;
+}
+#conosco{
+	position:relative;
+	left:5%;
+}
+
+#div_anuncie_conosco>h5{
+	margin-top:65px;
+	position:absolute;
+	left:50%;
+	transform:translate(-50%);
+
+}
+
+#topicos{
+	display:flex;
+	width:100vw;
+	padding:8%;
+	margin:0;
+	margin-top:2%
+	
+}
+
+#topicos > div{
+
+	margin:75px 70px 0px 70px;
+	text-align:center;
+	width:50%;
+}
+
+#topicos>div>p{
+	margin-top:45px;
+	letter-spacing:0.2em;
+}
+
+
+
+
+#div_anuncie_conosco>img{
+	position:absolute;
+	top:-20%;
+	height:75%;
+	left:50%;
+
+}
+#div_anuncie_conosco>#logo_direita{
+	
+	transform: rotate(-28.69deg) translateX(-50%);
+	left:97.2vw;
+
+}
+
+#div_anuncie_conosco>#logo_esquerda{
+	left:7.9vw;
+	transform: rotate(28.69deg) translateX(-50%) translateY(56.5%);
+	
+}
+
+
+/*Rodapé*/
+
+#rodape{
+	background:#FFB578;
+	width:100vw;
+	height:300px;
+	position:relative;
+	bottom:0;
+}
+
+#rodape>#links{
+	position:relative;
+	font-size:18pt;
+	padding:1%;
+	left:50%;
+	top:5%;
+	transform:translateX(-20%);
+}
+#rodape>#links>a{
+	margin-right:3%;
+}
+
+#nomeecnpj{
+	position:relative;
+	display:inline-flex;
+	font-size:11pt;
+	font-weight:550;
+	width:100%;
+	height:10%;
+	padding: 15% 0% 0% 0%;
+
+
+}
+#nomeecnpj>p{
+	position:relative;
+	width:50%;
+	left:17%;
+}
+
+#rodape>img{
+	position:absolute;
+	height:30em;
+	left:50%;
+	bottom:0%;
+	transform:translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*responsividade*/
+
+/*Medium and small devices*/
+
+@media only screen and (max-width:1200px){
+
+	#div_dos_produtos{
+		justify-content:center;
+		align-items:center;
+	}
+	.div_do_produto{
+		width:40vw;
+		height:40vw;
+	}
+
+	#topicos{
+		display:flex;
+		width:100vw;
+		padding:8%;
+		margin:0;
+		margin-top:2%
+	
+	}
+
+	#topicos > div{
+
+		margin:75px 0px 0px 0px;
+		text-align:center;
+		width:50%;
+	}
+
+	#topicos>div>p{
+		margin-top:45px;
+		letter-spacing:0.2em;
+	}
+	#nomeecnpj{
+		position:relative;
+		display:block;
+		font-size:10pt;
+		
+		padding: 5% 0% 0% 0%;
+		left:50%;
+		transform:translateX(-25%);
+	}
+	#nomeecnpj p{
+		position:relative;
+		width:50%;
+		
+	}
+
+}
+
+
+
+
+/*XS device*/
+
+@media only screen and (max-width:768px){
+	#hamburguer{
+		display:block;
+	}
+	#div_do_fundo_do_site{
+		margin:0;
+		height:280px;
+	}
+	.nav-item{
+	font-size: 10pt;
+	margin-right:4%;
+	}
+	.navegação{
+		display:none;
+	}
+	#Gratis{
+		display:none;
+	}
+	#fundo_do_site{
+		display:none;
+	}
+	#logo{
+	position: absolute;
+	width: 20em;
+	left: 50%;
+	transform:translateX(-50%);
+	top: -10%;
+
+	}
+	
+
+	.home-search{
+		position:absolute;
+		margin:0;
+		padding:0;
+		bottom:-20%;
+	}
+	.form-group{
+		padding:0;
+		margin:0;
+		left:50%;
+		transform:translateX(-50%);
+	}
+	.input-group{
+		padding:0 0 0;
+		
+	}
+	.form-inline{
+		padding:0;
+		margin:0;
+		width:100%;
+		}
+	.search-container{
+		position:absolute;
+		padding:0;
+		margin:0;
+		bottom:10%;
+
+	}
+
+	
+	/* produtos*/
+
+	#content{
+		top:120%;
+	}
+
+	#div_dos_produtos{
+		padding:0;
+
+	}
+	
+	.div_do_produto{
+		
+		
+		width:70%;
+		height:70%;
+		
+	}
+	.titulo_do_produto{
+		padding-top:10px;
+	}
+	
+	#ver_mais_produtos{
+		width:50%;
+		padding:12pt;
+		margin-top:20px;
+	}
+
+	/*Anuncie Conosco*/
+
+
+	#div_anuncie_conosco{
+		height:auto;
+	}
+	#linha{
+		top:1%;
+		left:50%;
+		transform:translateX(-50%);
+
+	}
+
+
+	#titulo_anuncie_conosco{
+		position:relative;
+		top:3%;
+		left:-18%;
+		
+	}
+	#titulo_anuncie_conosco>h3{
+		font-size:23pt;
+	}
+
+	#div_anuncie_conosco>h5{
+		top:10%;
+		left:17%;
+		letter-spacing:.2em;
+	}
+	#topicos{
+		display:flex;
+		flex-wrap:wrap;
+		
+
+	}
+	#topicos>div{
+		margin:20px 10px 80px 10px;
+		width:90%;
+	}
+
+	#facil{
+		margin-top:100px !important;
+	}
+	#facil h4{
+		letter-spacing:.35em;
+		text-align:right;
+	}
+	#facil p{
+	
+		text-align:right;
+		
+	}
+
+	#seguro h4, #seguro p{
+		text-align:left;
+	}
+
+	#logo_direita{
+		width:300px;
+		top:8% !important;
+		
+	}
+	#logo_esquerda{
+		width:300px;
+		top:23% !important;
+		left:30% !important;
+	}
+
+	.circle{
+		width:240px;
+		height:240px;
+		border-radius: 50%;
+		background:rgba(235, 132, 46, 0.8);
+		position:absolute;
+		top:30%;
+		left:-15%;
+		z-index:-1;
+	}
+
+
+	/*rodape*/
+	#rodape{
+		
+	}
+
+	#links{
+		transform:translateX(-50%) !important;
+	}
+	.link_do_rodape{
+		font-size:15pt;
+	}
+
+	#nomeecnpj{
+		position:relative;
+		display:inline-flex;
+		font-size:10pt;
+		font-weight:550;
+		width:100%;
+		height:10%;
+		
+
+
+	}
+	#nomeecnpj>p{
+		position:relative;
+		width:50%;
+		left:50%;
+	}
+	#nomeecnpj{
+		left:-10%;
+		padding:50px;
+	}
+}
+
+
