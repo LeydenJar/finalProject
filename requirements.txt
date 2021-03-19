@@ -1,4 +1,4 @@
 Django==2.0.3
-djangorestframework==3.9.4
+djangorestframework==3.11.2
 selenium==3.141.0
 Pillow==6.0.0
